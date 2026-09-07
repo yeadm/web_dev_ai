@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 태그</title>
+</head>
+<body>
+    <!-- 제목태그 : h1~h6 숫자가 작을수록 글씨 크기가 크고, 숫자가 커질수록 글씨 크기가 작아진다. h7은 존재하지 않음. html은 오류 안 잡아줌-->
+    <h1>heading 1</h1>
+    <h2>heading 2</h2>
+    <!--문단 태그 : 문장을 묶어서 보여줄 때 사용-->
+    <p>p 태그는 문단을 구분한다. <br> 줄 바꿈이 필요하면 br 태그를 사용한다. </p>
+    <hr> <!--구분선 : 문단이나 섹션을 시각적으로 나눌 때 사용-->
+    
+    <p> <strong>중요한 내용은</strong> strog 으로 강조하고,
+    <br> <em>강조된 내용은</em> em으로 표시한다.</p>
+    
+    <p> <mark>강조표시</mark>, <small>작은글자,</small> <br>
+    H<sub>2</sub>O 와 2<sup>3</sup>처럼 첨자를 쓸 수 있다.</p>
+
+    <!--인용태그 : 
+    - blockquote 문단인용, cite에 출처 url
+    - q 짧은 이용 따옴표 자동-->
+    <blockquote cite="https//google.com"> 
+        <q>시맨틱 HTML</q>은 화면에 어떻게 보이는지가 아니라, 그 내용이 무엇인지를 나타낸다. <br>
+        <cite>-google</cite>
+    </blockquote>
+
+    <!--code: 코드 조각, pre: 입력한 공백, 줄바꿈 그대로-->
+    <pre><code>
+    console.log ('hello,'); 
+    console.log ('world!');
+</code></pre>
+
+<!--abbr 약어 태그-->
+<p> <abbr title="hypertext markup language">html</abbr>을 배우는 중이다.</p>
+
+<!--특수문자 : <:&lt:,> : &gt;-->
+    <p> a &lt; b, a &gt; b &amp;&amp; d <br> 
+    &copy;  &nbsp;&nbsp;&nbsp;2026</p>
+
+</body>
+</html>

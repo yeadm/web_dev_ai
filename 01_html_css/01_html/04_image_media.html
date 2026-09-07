@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티 미디어 태그</title>
+</head>
+<body>
+    <h2> 이미지 태그</h2>
+    <!--src : 이미지 경로 
+    alt: 대체 텍스트, 이미지가 안 뜰때 대신 보임, 스크린 리더(시각장애인)가 이걸 읽어줌, 
+    width/ height : 크기, 픽셀 단위로 지정 가능
+    loading : 로딩 방식 (기본값 : eager, lazy : 이미지를 늦게 로딩)
+    -->
+    <figure><img src="../01_html/assets/panda.png" alt="판다" width="200">
+        <figcaption>넷째 아기판다</figcaption>
+    </figure>
+    
+    <h2> 오디오 태그</h2>
+    <!--controls : 재생 컨트롤 표시, loop: 반복재생-->
+    <audio src="../01_html/assets/audio.mp3" controls loop></audio>
+
+    <h2>비디오 태그</h2>
+    <video src="../01_html/assets/video.mp4" controls></video>
+
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5B7X1ej4IBQ?si=UHSMqpY4GAaA3i0_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+</body>
+</html> 
