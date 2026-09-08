@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 태그</title>
+</head>
+<body>
+    <h2>기본 표</h2>
+    <table border="1">
+        <!--tr태그(table row) : 가로 한 줄-->
+        <tr>
+            <!--th태그: 제목칸(굵게, 가운데)-->
+            <th>브라우저</th>
+            <th>제조사</th>
+        </tr>
+        <tr>
+            <!--td태그 : 내용, 데이터 칸-->
+            <td>Chrome</td>
+            <td>구글</td>
+        </tr>
+        <tr>
+            <td>safari</td>
+            <td>애플</td>
+        </tr>
+    </table>
+
+    <h2>행/열합치기</h2>
+    <table border="1">
+       <tr>
+        <!--rowspan태그 : 아래로 n만큼 차지-->
+        <th rowspan="2">이름</th>
+        <td>루이바오</td>
+       </tr>
+       <tr>
+        <td>후이바오</td>
+       </tr> 
+       <tr>
+        <th colspan="2">주소</th>
+      </tr>
+       <tr> <td colspan="2">경기도 용인 에버랜드</td>
+    </tr>
+    
+    </table>
+    
+    <h2>테이블 구조</h2>
+    <table border="1">
+        <!--caption : 표 제목-->
+        <caption>바오 패밀리 친구들</caption>
+
+        <!--colgroup : 세로 열 묶음-->
+        <colgroup>
+        <col />
+        <col style="background-color: yellow;"/>
+        <col />
+
+        </colgroup>
+        <!--thead : 제목줄, tbody: 테이터줄(리액트에서 작성하지 않으면 경고창), tfoot : 합계 등-->
+        <thead></thead>
+        <tr>
+            <th scope="col">이름</th>
+            <th scope="col">나이</th>
+            <th scope="col">주소</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>코식이</td>
+                <td>36</td>
+                <td>경기도 용인</td>
+            </tr>
+            <td>제돌이</td>
+            <td>28</td>
+            <td>제주도</td>
+        </tbody>
+        <tfoot>
+            <th colspan="2">총 마리 수</th>
+            <td>2</td>
+        </tfoot>
+    </table>
+
+
+</body>
+</html>
