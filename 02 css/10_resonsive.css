@@ -1,0 +1,90 @@
+body{
+    background: lightblue;
+    color: red;
+}
+@media (max-width: 1000px) {
+    /*1000px 이하*/
+    body{
+        color: blue;
+    }
+}
+@media (max-width:700px) {
+    /*700px 이하*/
+    body{color: orange;}
+}
+
+/*모바일 기준 min-width 이 너비보다 넓어지면 덮어쓴다*/
+@media (min-width: 700px){
+    /*700px이상*/
+    body{
+        background-color: lightseagreen;
+    }
+}
+@media(min-width : 1000px){
+    /*1000px이상*/
+    body{
+        background-color: lightcoral;
+    }
+    }
+    /*모바일 기준*/
+.flex-container{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    }
+    .flex-container.item{
+        background: dodgerblue;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        height: 80px;
+    }
+    @media(min-width : 600px){
+        .flex-container{
+            flex-direction: row;
+        }
+        .flex-container.itenm{
+            flex: 1;
+        }
+    }
+    .grid-container{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr;
+    }
+    @media(min-width: 700px){
+        .grid-container
+        grid-template-columns: repeat(2,1fr);/*한 줄에 2칸씩*/
+    }
+    @media (min-width : 1000px) {
+        .grid-container{
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+    }
+
+    /*aspect-ratio : 높이를 직접 계산하지 않아도 가로세로 비율 고정
+    ->이미지나 카드 썸네일에 유용*/
+.ratio-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap:10px
+}
+.ratio-card{
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: center;
+}
+.ratio-card:first-child{ /*썸네일*/
+    aspect-ratio: 16/9 ;
+}
+.ratio-card:nth-child(2){
+    aspect-ratio: 4/3 ;
+}
+.ratio-card:nth-child(3){
+    aspect-ratio: 1/1 ; /*프로필 이미지*/
+}

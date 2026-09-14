@@ -14,3 +14,5 @@
   .meal{font-weight: bold;}
   .f{text-align: center; color: gray;}
   .m{color: green;}
+
+  /* css변수: 색이나 폰트 등 한번만 등록, 사용하는 곳에서는 var() root{} */

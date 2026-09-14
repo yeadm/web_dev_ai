@@ -1,0 +1,88 @@
+.grid{
+    display: grid;
+    background: #eee;
+    gap: 10px;/*grid의 경우 row-gap, column-gap 분리해서 사용가능*/
+    padding: 10px;
+}
+.item{
+    background: #43aaff;
+    color: white;
+    padding: 12px 16px;
+    /*텍스트 정중앙으로 flex 사용*/
+    justify-content: center;
+    align-items: center;
+}
+/*grid-template-columns/rows*/
+.template{
+    /* 칸의 열 너비를 정함 */
+    grid-template-columns: 100px 200px 100px; 
+    /* 칸의 행 높이를 정함 */
+    grid-template-rows: 50px 100px;
+    grid-template-columns: repeat(3, 150px); /*150픽셀을 3번 반복*/
+    grid-template-rows: repeat(2,80px);
+}
+/* grid-column/row*/
+.cr{
+    /*fr(fraction) : 남는 공간을 나누는 비율 단위*/
+    grid-template-columns:repeat(3, 1fr);
+
+}
+.cr.cloumn{
+    grid-column: 1/4;
+    /*1번 선~ 4번선까지 차지하겠다 의미(3칸차지) =span 3*/
+}
+.cr.row{
+    grid-row-start: 2/4 ; /*2번~4번선 세로로 차지=span2 */
+}
+/* grid-template-areas
+    레이아웃에 이름 붙여서 사용 */
+.area{ 
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: :"header header"
+"nav main" ; }
+.header{
+    grid-area: header;
+}
+.nav {
+    grid-area: nav;
+}
+
+.main{
+    grid-area : main;
+}
+.section{
+    grid-area: footer;
+}
+footer{
+    grid-area: footer;
+}
+/*auto-fit vs auto-fill*/
+.fit{
+    /*채울 아이템이 부족하면 아이템들이 공간을 나눠 가짐(유동성 있음)*/
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+}
+
+.fill{
+    /*채울 아이템이 부족해도 빈칸 그대로 유지(유동성 없음)*/
+     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+
+}
+
+/**/
+.content{
+    grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(2, 80px);
+}
+.item{
+    /*각 칸 "안"에서 아이템의 위치*/
+    align-items:  end;
+    justify-items: center;
+}
+.content{
+    height: 300px;
+    /*그리드 자체를 어디에 배치할지 정함*/
+    align-content: end;
+    justify-content: center;
+
+}
