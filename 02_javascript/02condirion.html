@@ -111,6 +111,52 @@ console.log(result);
         }
 
     </script>
+
+    <h2>중첩 if</h2>
+    <script>
+        //아이디가 user1, 비밀번호가 1234인 경우만 로그인 성공
+        //비밀번호가 틀리면 "비밀번호가 틀렸습니다."
+        //아이디가 틀리면 "아이디를 잘못 입력하셨습니다."
+        const ID = "user1"
+        const PW = "1234"
+
+        if(ID === "user1"&&  PW === "1234"){
+            console.log("로그인 성공")
+        }
+    else if(ID === "user1"&& PW !== "1234"){
+        console.log("비밀번호가 틀렸습니다.")
+    }
+    else if(ID !== "user1"&& PW === "1234"){
+        console.log("아이디를 잘못 입력하셨습니다.")
+    }
+    else{
+        console.log("아이디와 비밀번호를 확인해주십시오.")
+    }
+//효율적으로 코드를 짜는 방법 : 오히려 잘못된 경우들을 먼저 처리하기
+    if(ID !== "user1"){
+        console.log("아이디를 잘못 입력하셨습니다.")
+    }
+    else if(PW !== "1234"){
+        console.log("비밀번호가 틀렸습니다.")
+    }
+
+    //명확하게 짜는 방법 : 중첩 if
+    if(id === "user1"){
+        if(PW === "1234"){
+            console.log("로그인 성공")
+            else{
+                 console.log("비밀번호가 틀렸습니다.")
+            }
+        }
+        
+    }
+    else{
+            console.log("아이디를 잘못 입력하셨습니다.")
+        }
+
+
+
+    </script>
     
 </body>
 </html>
