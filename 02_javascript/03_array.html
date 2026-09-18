@@ -77,5 +77,23 @@
         console.log(arrtostr)
 
     </script>
+
+    <h2>구조 분해 할당</h2>
+    <script>
+        //배열이나 객체의 속성을 해체하여 그 값을 개별 변수로 쉽게 담을 수 있게 사용하는 문법
+        const [f1, f2, f3, f4, f5]= ["짱구", "유리", "철수", "훈이", "맹구"]
+        console.log(f1)
+    </script>
+
+    <h2>전개 연산자(spread/...)</h2>
+    <script>
+        //배열을 합치거나 복사할 떄 정말 많이 사용함
+        const arrA = [1, 2, 3];
+        const arrB = [4, 5, 6];
+        //[1,2,3,4,5,6]
+        console.log([...arrA, ...arrB])
+    </script>
+
+
 </body>
 </html>
