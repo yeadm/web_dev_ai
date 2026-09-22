@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.date-display {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.time-display {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.remain-display {
+  font-size: 25px;
+  font-weight: bold;
+}
+.wisdom-display {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
