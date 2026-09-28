@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비동기</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>비동기 처리</h1>
+    <p>JS는 싱글스레드(한번에 한 작업)라 비동기로 대기 중에도 
+        UI와 로직을 유지하는 데에 있어서 서버요청, 타이머 기능 등을 처리하는 데에 있어서 
+        다른 작업이 멈추지 않도록 하지 위해</p>
+        <!-- 동기는 순차적으로, 비동기는 먼저 빨리 해결되는 걸 먼저 완료하는 -->
+
+        <h2>콜백(callback) </h2>
+        <button id="callback">콜백 실행</button>
+        <p id="callResult"></p>
+
+
+
+        <h2>promise</h2>
+        <button id="promise">promise 실행</button>
+        <p id="promiseResult"></p>
+
+        <h2>asyn/await</h2>
+        <p>promise를 "동기적 코드처럼" 작성</p>
+        <button id="async">asyn/await실행</button>
+        <p id = "asynAwaResult"></p>
+
+        <h2>fetch</h2>
+        <button id="fetch"> 드라마 정보 가져오기</button>
+        <div id="fetchResult"></div>
+
+        <button id="fetchlist">회원 목록 가져오기</button>
+        <ul id=" userlist"></ul>
+
+        <h2> chart.js</h2>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <h2>카카오맵</h2>
+        <div id="map" style="width: 500px; height: 400px;"></div>
+        <script type="text/javascript" 
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=272fc4350ddd243d2d9224bfce7da6b7">
+    </script>
+
+
+
+
+    <script src="./09_async_await.js"></script>
+    
+</body>
+</html>
