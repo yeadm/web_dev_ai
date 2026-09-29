@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+  </head>
+  <body>
+    <h2>정규표현식(Regular Expression)</h2>
+    <p>문자열에서 특정 패턴을 찾거나, 대체하거나, 나누는 도구</p>
+    <ul>
+      <li> ^ : 시작, $ : 끝 - 둘 다 쓰면 처음부터 끝까지</li>
+      <li>\d : 숫자, \w : 영문, 숫자, _, \s: 공백</li>
+      <li> . : 임의의 한 문자, *: 앞문자가 0회 이상, +: 앞문자가 1회 이상,
+        ?: 앞문자가 0~1회
+      </li>
+      <li>[]: 문자셋 - a-z까지 알파벳 소문자, A-Z 알파벳 대문자, 0-9 숫자, 가-힣 한글</li>
+     <li>{m} : m회, {m,n} : ㅡm~n회 반복></li>
+    </ul>
+
+    <h2> 입력할 때마다 검사</h2>
+    <input type="text" "[phone]">
+    <script src="./10_form_storage.js"></script>
+  </body>
+</html>
