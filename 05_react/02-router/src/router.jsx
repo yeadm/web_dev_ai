@@ -4,6 +4,9 @@ import Dashboard from "./pages/Dashbord.jsx";
 import Cars from "./pages/Cars.jsx";
 
 //주소(URL) <-> 화면 연결 = 객체 하나 { path, element}
+//path: 주소창에서  localhost:5173 뒤에 오는 부분
+//element : 매칭된 path 주소일 때 그릴 화면
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,3 +19,9 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+
+/*
+  -SSR(Server Side Rendering) : 서버에서 화면을 그려내서 클라이언트에게 전달 -> next.js
+  -CSR(Client Side Rendering) : 클라이언트에서 화면을 그려내는 방식(->React가 해당)
+  -SPA(Single Page Application) : HTML 페이지가 하나뿐인 애플리케이션(->React가 해당)
+*/
