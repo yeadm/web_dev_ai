@@ -7,9 +7,11 @@ import { Outlet } from "react-router";
 
 //모든 페이지가 같이 쓰는 틀
 const Layout = () => {
-    return <>
-    </Header>
-    </Outlet>
-    </>;
+    return 
+    <>
+    <Header/>
+    <Outlet/>
+    </>
+    
 };
 export default Layout;
