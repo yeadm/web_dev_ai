@@ -1,25 +1,45 @@
-import { Link, NavLink } from "react-router";
-/*
-a 태그는 브라우저가 해당 주소의 html을 통째로 새로 받아온다
--> 화면이 깜빡이고, state가 전부 사라짐
-link는 눌러도 새로 받지 않는다.
-->주소만 바꾸고 라우터가 그 주소에 맞는 화면만 갈아끼운다.
-*/
+import { Link, NavLink, useLocation } from "react-router";
+import { User } from "lucide-react";
+//import"../utils/menu.js";
+import { useState , useEffect } from "react";
 
-//activeStyle 놓침
-
-//기존 header에 해당하는 태그들만
 const Header = () => {
+  const {pathname} = useLocatio();
+
+  //메뉴가 열렸는지(true) 닫혔는지(false)
+const [menuOpen, setMenuOpen] = useState(false) ; 
+const closeMenu = () => setMenuOpen(false);
+
+
+//주소가 바뀔 때마다 메뉴를 닫아버림 -> 링크마다 onClicl={closeMenu} 할 필요가 없어짐
+useEffect(() => {setMenuOpen(false);}, [pathname]);
+
+
+//현재 컴포넌트의 라이프 사이클 관리
+//마운트(화면에 처음 나타났을 때) - 업데이트(state, props가 바뀌면서 다시 그려짐) -언마운트(화면에서 사라지는 경우) 
+//[] : 마운트! -> 처음 나타났을 때
+//[] 안에 값이 들어간다면 그 값이 바뀔 때마다 
+useEffect(()=> {
+  const onkeyDown= (e) => {
+    if(e.key === "Escape") { setMenuOpen(false);}
+  };
+  document.addEventListener("keydown", onkeydown);
+//return 함수 : 뒷정리(언마운트)
+return () => document.removeEventListener("keydown", onKeyDown);}
+[menuOpen]);
+
+
   return (
     <>
       <header>
         <div className="header-left">
           <button
             type="button"
-            className="menu-toggle"
-            id="menuToggle"
+            className={menuOpen ? "menu-toggle active" : "menu-toggle"
+                          id="menuToggle"
             aria-label="메뉴 열기"
             aria-expanded="false"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
             <span className="hamburger-bar"></span>
             <span className="hamburger-bar"></span>
@@ -28,25 +48,28 @@ const Header = () => {
           <Link to="/" className="logo">
             정비노트
           </Link>
-          <nav id="navMenu">
-            <NavLink to ="/" style={activeStyle}>대시보드</NavLink>
-             <NavLink to ="/" style={activeStyle}>차량관리</NavLink>
-              <NavLink to ="/" style={activeStyle}>정비이력</NavLink>
-               <NavLink to ="/" style={activeStyle}>고객상담</NavLink>
-            <a href="/" className="active">
-              대시보드
-            </a>
-            <a href="./vehicle-management.html">차량관리</a>
-            <a href="./maintenance-history.html">정비 이력</a>
-            <a href="./customer-consultation.html">고객 상담</a>
+          {/* menuOpen 값에 따라서 active를 붙였다가(true) 떼었다가(flase) */}
+          <nav id="navMenu" className={menuOpen ? "active" : ""}>
+            <NavLink to="/" onClick={closeMenu}> 대시보드</NavLink>
+            <NavLink to="/cars" onClick={() => setMenuOpen(false)}> 차량관리</NavLink>
+            <NavLink to="/records">정비 이력</NavLink>
+            <NavLink to="/consultations">고객 상담</NavLink>
           </nav>
         </div>
         <div className="header-right">
-          <div className="no-profile">김</div>
+          <div className="no-profile">
+            <User size={20} color="#ffffff" />
+          </div>
           <span className="user-name">김정비 사장님</span>
         </div>
       </header>
-      <div className="menu-overlay" id="menuOverlay"></div>
+      {/*바깥(어두운배경) 클릭하면 닫기*/}
+      <div 
+      className={menuOpen ? "menu-overlay active" : "menu-overlay"} 
+      id="menuOverlay" 
+      onClick={() => setMenuOpen(false)}>
+
+      </div>
     </>
   );
 };

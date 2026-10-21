@@ -1,5 +1,3 @@
-@import url('./layout.css');
-
 .stat-grid,
 .card-section {
   display: grid;
@@ -298,7 +296,6 @@
 }
 
 @media (max-width: 1024px) {
-
   .stat-grid,
   .card-section {
     grid-template-columns: repeat(2, 1fr);

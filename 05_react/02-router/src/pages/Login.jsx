@@ -1,18 +1,17 @@
-import { Link ,useNavigate} from "react-router";
-//Link는 바로이동, useNavigate는 코드를 걸쳐서 이동
-
+import { Link, useNavigate } from "react-router";
+// Link는 바로 이동, useNavigate는 코드를 걸쳐서 이동
 const Login = () => {
-
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    //지금 서버가 없어서 원래는 서버 갔다가 온 후
+    // 지금 서버가 없어서 원래는 서버 갔다가 온 후
     navigate("/");
   };
 
   return (
     <section className="login-screen">
-      <form className="login-card" onSubmit={}>
+      <form className="login-card" onSubmit={handleSubmit}>
         <div className="login-brand">정비노트</div>
         <p className="login-title">자동차검사정비 · 관리자</p>
 
@@ -48,7 +47,7 @@ const Login = () => {
         <p className="form-result error" id="login-result"></p>
 
         <p className="login-foot">
-          <Link to="./signup">계정 신청</Link>
+          <Link to="/signup">계정 신청</Link>
           <span className="sep">·</span>
           <a href="#">비밀번호를 잊으셨나요?</a>
         </p>

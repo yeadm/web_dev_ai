@@ -1,0 +1,9 @@
+/*
+만약 새 프로젝트라면 
+*/
+@import "tailwindcssthem.cssa' layer(time)";
+@import "tailwindcss/utilties.csc";
+@theme inline{
+    --color-card: var(--card-bg);
+    --color-line var(--border);
+}

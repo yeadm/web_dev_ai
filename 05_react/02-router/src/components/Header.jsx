@@ -1,14 +1,17 @@
 import { Link, NavLink } from "react-router";
 /*
-a 태그는 브라우저가 해당 주소의 html을 통째로 새로 받아온다
--> 화면이 깜빡이고, state가 전부 사라짐
-link는 눌러도 새로 받지 않는다.
-->주소만 바꾸고 라우터가 그 주소에 맞는 화면만 갈아끼운다.
+    a 태그는 브라우저가 해당 주소의 html을 통째로 새로 받아 온다
+    -> 화면이 깜빡이고, state 가 전부 사라진다
+    -> 리액트 내부에서 계속 사용하신다면 외부 링크 연결시
+    Link는 눌러도 새로 받지 않는다. 
+    -> 주소만 바꾸고 라우터가 그 주소에 맞는 화면만 갈아끼운다.
 */
+const activeStyle = ({ isActive }) => ({
+  fontWeight: isActive ? "bold" : "normal",
+  textDecoration: isActive ? "underline" : "none",
+});
 
-//activeStyle 놓침
-
-//기존 header에 해당하는 태그들만
+// 기존 header에 해당하는 태그들만
 const Header = () => {
   return (
     <>
@@ -29,16 +32,18 @@ const Header = () => {
             정비노트
           </Link>
           <nav id="navMenu">
-            <NavLink to ="/" style={activeStyle}>대시보드</NavLink>
-             <NavLink to ="/" style={activeStyle}>차량관리</NavLink>
-              <NavLink to ="/" style={activeStyle}>정비이력</NavLink>
-               <NavLink to ="/" style={activeStyle}>고객상담</NavLink>
-            <a href="/" className="active">
+            <NavLink to="/" style={activeStyle}>
               대시보드
-            </a>
-            <a href="./vehicle-management.html">차량관리</a>
-            <a href="./maintenance-history.html">정비 이력</a>
-            <a href="./customer-consultation.html">고객 상담</a>
+            </NavLink>
+            <NavLink to="/cars" style={activeStyle}>
+              차량관리
+            </NavLink>
+            <NavLink to="/records" style={activeStyle}>
+              정비 이력
+            </NavLink>
+            <NavLink to="/consultations" style={activeStyle}>
+              고객 상담
+            </NavLink>
           </nav>
         </div>
         <div className="header-right">

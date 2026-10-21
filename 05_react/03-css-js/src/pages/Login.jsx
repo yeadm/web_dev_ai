@@ -1,18 +1,26 @@
-import { Link ,useNavigate} from "react-router";
-//Link는 바로이동, useNavigate는 코드를 걸쳐서 이동
+/*
+  shadcn/ui: 버튼, 입력칸, 표, 모달, 토스트(알림), 달력 등 수십개의 부품을 줌
+  -> 필요한 것만 add해서 가져오면 끝
+  세팅 
+  1. jsconfig.json 파일 추가
+  2. vite.config.js 설정 추가
+  3. npx shadcn@latest init
+*/
 
+import { Link, useNavigate } from "react-router";
+// Link는 바로 이동, useNavigate는 코드를 걸쳐서 이동
 const Login = () => {
-
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    //지금 서버가 없어서 원래는 서버 갔다가 온 후
+    // 지금 서버가 없어서 원래는 서버 갔다가 온 후
     navigate("/");
   };
 
   return (
     <section className="login-screen">
-      <form className="login-card" onSubmit={}>
+      <form className="login-card" onSubmit={handleSubmit}>
         <div className="login-brand">정비노트</div>
         <p className="login-title">자동차검사정비 · 관리자</p>
 
@@ -48,7 +56,7 @@ const Login = () => {
         <p className="form-result error" id="login-result"></p>
 
         <p className="login-foot">
-          <Link to="./signup">계정 신청</Link>
+          <Link to="/signup">계정 신청</Link>
           <span className="sep">·</span>
           <a href="#">비밀번호를 잊으셨나요?</a>
         </p>
