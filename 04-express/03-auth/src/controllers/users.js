@@ -1,0 +1,23 @@
+import * as userService from "../services/user.js";
+
+//컨트롤러가 하는 일은 requset -> service -> response
+
+//signup
+export const signup = async (req, res) => {
+    await userService.insertUser(req.body);
+    res.sendStatus(201);
+};
+
+//login
+export const login = async(req,res) => {
+    const result = await userServuce.login(req. body);
+    if(result ){
+        //로그인 성공
+        res.sendStatus(200);
+    }
+    else{
+        //로그인 실패
+        res.sendStatus(401);
+    }
+
+};
