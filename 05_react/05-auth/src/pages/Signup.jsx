@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link,useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { User } from "lucide-react";
-import { signup } from "../api/auth.js";
-import { toast } from "@/components/ui/toaet";
+import { signup } from "../api/users.js";
+import { toast } from "@/components/ui/toast";
 
 const Signup = () => {
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [showPw, setShowPw] = useState(false);
   const [preview, setPreview] = useState(null);
@@ -17,17 +17,15 @@ const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //서버한테 보내는 위치!
+    // 서버한테 보내는 위치!
     await signup({
       email: e.target.email.value,
-      password: e.target.password.valse,
-      password,
-      nmae: e.target.userName.value,
+      password: e.target.password.value,
+      name: e.target.userName.value,
       phone: e.target.phone.value,
     });
-
-    toast.add({ title: "회원가입완료!" });
-    navigate("/login")
+    toast.add({ title: "회원 가입 완료!" });
+    navigate("/login");
   };
 
   return (
